@@ -1,0 +1,22 @@
+.navbar,
+.footer {
+  border-top: 1px solid #2d2d44;
+  border-bottom: 1px solid #2d2d44;
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+.navbar {
+  gap: 1rem;
+}
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+.main-content {
+  min-height: 100vh;
+  padding: 20px;
+}
+.logo {
+}
