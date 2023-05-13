@@ -40,6 +40,9 @@
   font-weight: 400;
 }
 .personil-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 .personil-item {
   display: flex;
@@ -49,6 +52,16 @@
   font-size: 30px;
   font-weight: 600;
   gap: 1.5rem;
+  border-bottom: 1px solid #fff;
+  padding: 2.5rem 0rem;
+  margin: 0rem 5rem;
+}
+.personil-item:nth-child(odd) {
+  justify-content: flex-start;
+}
+.personil-item:nth-child(even) {
+  justify-content: flex-start;
+  flex-direction: row-reverse;
 }
 .image {
   width: 100%;

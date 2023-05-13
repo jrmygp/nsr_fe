@@ -2,8 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 
-import { GlitchText } from "glitch-text";
-
 import Button from "@mui/material/Button";
 
 import { RiDiscordFill, RiYoutubeFill, RiInstagramFill } from "react-icons/ri";
@@ -14,21 +12,152 @@ import logo from "../public/Images/logo.png";
 import { RadarChart } from "../components/RadarChart/RadarChart";
 import { Divider } from "@mui/material";
 
-const data = {
-  labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
-  datasets: [
-    {
-      label: "Player Stat",
-      data: [85, 50, 90, 80, 80, 85],
-      borderColor: "#d5a023",
-      pointBackgroundColor: "#d5a023",
-      borderWidth: 3,
-      pointHoverBorderColor: "#d5a023",
-      fill: true,
-      backgroundColor: "rgb(213, 160, 35, 0.5)",
+const personils = [
+  {
+    name: "Supervto",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [85, 50, 90, 80, 80, 85],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
     },
-  ],
-};
+  },
+  {
+    name: "Noerton",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [55, 50, 100, 80, 70, 85],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
+    },
+  },
+  {
+    name: "Vermicello",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [95, 50, 90, 40, 80, 65],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
+    },
+  },
+  {
+    name: "Voltscrow",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [80, 50, 100, 50, 80, 85],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
+    },
+  },
+  {
+    name: "Algorithm",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [85, 40, 90, 40, 80, 85],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
+    },
+  },
+  {
+    name: "Rodney",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [60, 50, 90, 90, 80, 65],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
+    },
+  },
+  {
+    name: "Susu Bubuk",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [45, 50, 60, 80, 70, 85],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
+    },
+  },
+  {
+    name: "YaBoiJay",
+    data: {
+      labels: ["Aim", "IQ", "Clutch", "Strategy", "Headshot", "KDA"],
+      datasets: [
+        {
+          label: "Player Stat",
+          data: [45, 50, 70, 80, 90, 85],
+          borderColor: "#d5a023",
+          pointBackgroundColor: "#d5a023",
+          borderWidth: 3,
+          pointHoverBorderColor: "#d5a023",
+          fill: true,
+          backgroundColor: "rgb(213, 160, 35, 0.5)",
+        },
+      ],
+    },
+  },
+];
 
 export default function Home() {
   return (
@@ -83,40 +212,50 @@ export default function Home() {
 
         <section className={classes["personil-wrapper"]}>
           <ul className={classes["personil-list"]}>
-            <li className={classes["personil-item"]}>
-              <img
-                src="https://prosettings.net/wp-content/uploads/tenz.png"
-                className={classes.image}
-              />
+            {personils.length > 0 &&
+              personils.map((personil, idx) => {
+                return (
+                  <li className={classes["personil-item"]} key={idx}>
+                    <img
+                      src="https://prosettings.net/wp-content/uploads/tenz.png"
+                      className={classes.image}
+                    />
 
-              <div className={classes.stats}>
-                <div className={classes["player-name"]} data-glitch="Supervto">
-                  Supervto
-                </div>
-                <p className={classes["player-intro"]}>
-                  Supervto is a pro gamer who has made a name for himself in the
-                  world of first-person shooter (FPS) gaming. His incredible
-                  skill and precision with a mouse and keyboard are legendary
-                  among his fans and competitors alike. Supervto has won
-                  numerous tournaments and accolades for his FPS gameplay, and
-                  his ability to read the game and outmaneuver his opponents is
-                  unparalleled. He is known for his quick reflexes and
-                  lightning-fast decision-making skills, which allow him to
-                  dominate in fast-paced, high-pressure situations. When it
-                  comes to FPS gaming, Supervto is truly in a league of his own.
-                </p>
-                <div className={classes["radar-chart"]}>
-                  <RadarChart data={data} />
-                </div>
-              </div>
+                    <div className={classes.stats}>
+                      <div
+                        className={classes["player-name"]}
+                        data-glitch={personil.name}
+                      >
+                        {personil.name}
+                      </div>
+                      <p className={classes["player-intro"]}>
+                        {personil.name} is a pro gamer who has made a name for
+                        himself in the world of first-person shooter (FPS)
+                        gaming. His incredible skill and precision with a mouse
+                        and keyboard are legendary among his fans and
+                        competitors alike. Supervto has won numerous tournaments
+                        and accolades for his FPS gameplay, and his ability to
+                        read the game and outmaneuver his opponents is
+                        unparalleled. He is known for his quick reflexes and
+                        lightning-fast decision-making skills, which allow him
+                        to dominate in fast-paced, high-pressure situations.
+                        When it comes to FPS gaming, Supervto is truly in a
+                        league of his own.
+                      </p>
+                      <div className={classes["radar-chart"]}>
+                        <RadarChart data={personil.data} />
+                      </div>
+                    </div>
 
-              <video autoPlay muted loop className={classes.video}>
-                <source
-                  src="https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltefd45731d8f9d9df/6217f2ea910a6c613c73168c/VALORANT_PLAY22_16x9_Target4_v005.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </li>
+                    {/* <video autoPlay muted loop className={classes.video}>
+                      <source
+                        src="https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltefd45731d8f9d9df/6217f2ea910a6c613c73168c/VALORANT_PLAY22_16x9_Target4_v005.mp4"
+                        type="video/mp4"
+                      />
+                    </video> */}
+                  </li>
+                );
+              })}
           </ul>
         </section>
       </div>

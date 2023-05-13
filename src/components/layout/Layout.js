@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
         />
       </section>
       <main className={classes["main-content"]}>{children}</main>
-      <section className={classes.footer}>Footer</section>
+      <section className={classes.footer}>Contact us</section>
     </div>
   );
 };
